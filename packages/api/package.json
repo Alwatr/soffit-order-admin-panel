@@ -1,6 +1,6 @@
 {
-  "name": "@alwatr/pmpa-api",
-  "version": "1.1.1",
+  "name": "@alwatr/soffit-order-admin-api",
+  "version": "0.0.0",
   "description": "Alwatr Progressive Multi Page (Web) Application.",
   "author": "S. Ali Mihandoost <ali.mihandoost@gmail.com>",
   "private": true,
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Alwatr/pmpa",
+    "url": "https://github.com/Alwatr/soffit-order-admin",
     "directory": "packages/api"
   },
-  "homepage": "https://github.com/Alwatr/pmpa#readme",
+  "homepage": "https://github.com/Alwatr/soffit-order-admin#readme",
   "bugs": {
-    "url": "https://github.com/Alwatr/pmpa/issues"
+    "url": "https://github.com/Alwatr/soffit-order-admin/issues"
   },
   "prettier": "@alwatr/prettier-config",
   "nano-build-development": {

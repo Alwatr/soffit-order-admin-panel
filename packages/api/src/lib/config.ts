@@ -2,7 +2,7 @@ import {definePackage} from '@alwatr/logger';
 
 import type {} from '@alwatr/nano-build'
 
-export const logger = definePackage('@alwatr/pmpa-api', __package_version__);
+export const logger = definePackage('@alwatr/soffit-order-admin-api', __package_version__);
 
 if (process.env.NODE_ENV === 'production') {
   if (process.env.STORAGE_TOKEN == null) {
