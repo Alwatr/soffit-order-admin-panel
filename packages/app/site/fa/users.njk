@@ -1,0 +1,45 @@
+---
+title: نمایندگان
+---
+
+<header x-data x-init="$store.userProfile.require()"
+  class="absolute left-0 right-0 top-0 z-fixed flex h-16 shrink-0 grow-0 select-none items-center bg-surfaceContainer px-1 translucent">
+  <div class="shrink grow text-ellipsis whitespace-nowrap px-1 text-start text-titleLarge text-onSurface">
+    {{ title }}
+  </div>
+
+  <button class="block cursor-pointer rounded-full p-3 text-[1.5rem] state-onSurfaceVariant">
+    {% alwatrIcon "reload-outline" %}
+  </button>
+</header>
+
+<main class="grow overflow-y-scroll pt-16">
+  <div class="overflow-hidden rounded-lg m-10 border-primary border-opacity-30 border-2">
+    <table class="w-full whitespace-no-wrap">
+      <thead class="text-bodyLarge font-bold bg-primaryContainer text-onPrimaryContainer">
+        <tr class="divide-primary divide-x-2 divide-x-reverse divide-opacity-30 text-center">
+          <td class="px-4 py-4">نام</td>
+          <td class="px-4 py-4">استان</td>
+          <td class="px-4 py-4">شماره همراه</td>
+          <td class="px-4 py-4">ابزار</td>
+        </tr>
+      </thead>
+      <tbody x-data class="divide-y-2 divide-primary divide-opacity-30 text-bodyLarge">
+        <template x-for="i in 10">
+          <tr class="divide-primary divide-x-2 divide-x-reverse divide-opacity-30">
+            {# <td class="px-4 py-4" x-text="$store.userProfile.data.data.fullName"></td> #}
+            <td class="px-4 py-4 text-center" x-text="'آقای سید علیرضا تفتی'"></td>
+            {# <td class="px-4 py-4" x-text="$store.userProfile.data.data.province"></td> #}
+            <td class="px-4 py-4" x-text="'خراسان رضوی'"></td>
+            <td class="px-4 py-4" x-text="l10n.replaceNumber($store.userProfile.data.data.phoneNumber + '')"></td>
+            <td class="px-4 py-4 flex flex-row gap-2 justify-center">
+              <a class="text-primary" href="/fa/order-list.html">{% alwatrIcon "cart-outline", "text-[1.5rem]" %}</a>
+              <a class="text-primary" :href="'tel:+' + $store.userProfile.data.data.phoneNumber">{% alwatrIcon
+                "call-outline", "text-[1.5rem]" %}</a>
+            </td>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+  </div>
+</main>

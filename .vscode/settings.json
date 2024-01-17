@@ -60,5 +60,8 @@
     "tailwindcss",
     "tsbuildinfo",
     "vazirmatn"
-  ]
+  ],
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
 }
