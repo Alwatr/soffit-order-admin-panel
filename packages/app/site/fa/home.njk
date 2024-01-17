@@ -4,31 +4,26 @@ permalink: /
 navId: home
 ---
 
-<header
-  x-init="$store.userProfile.require()"
-  x-data
-  class="absolute left-0 right-0 top-0 z-fixed flex h-16 shrink-0 grow-0 select-none items-center bg-surfaceContainer px-1 shadow translucent"
->
-  <div class="grow shrink text-ellipsis whitespace-nowrap px-1 text-center text-titleLarge text-onSurface">{{ site.title }}</div>
+<header x-init="$store.userProfile.require()" x-data
+  class="absolute left-0 right-0 top-0 z-fixed flex h-16 shrink-0 grow-0 select-none items-center bg-surfaceContainer px-1 shadow translucent">
+  <div class="grow shrink text-ellipsis whitespace-nowrap px-1 text-center text-titleLarge text-onSurface">{{ site.title
+    }}</div>
 
   <template x-if="$store.userProfile.data">
     <figure class="block p-3">
-      <img src="/img/user-avatar-v1.jpg" class="block h-6 w-6 rounded-full ring-1 ring-tertiary ring-offset-2" alt="عکس پروفایل" />
+      <img src="/img/user-avatar-v1.jpg" class="block  w-6 h-6 rounded-full ring-1 ring-tertiary ring-offset-2"
+        alt="عکس پروفایل" />
     </figure>
   </template>
 </header>
 
-<main class="grow overflow-y-scroll pt-16">
+<main class=" overflow-y-scroll pt-16 grow">
   <div class="flex flex-row flex-wrap content-start gap-4 p-4">
-    <a
-      href="https://soffit.co/"
-      target="_blank"
+    <a href="https://soffit.co/" target="_blank"
       class="flex h-[40vw] shrink grow basis-full items-center justify-center rounded bg-primary bg-cover bg-center bg-no-repeat transition-shadow elevation-2 hover:elevation-3 extended:h-80"
-      style="background-image: url('/img/home-1.jpeg')"
-    >
+      style="background-image: url('/img/home-1.jpeg')">
       <h2
-        class="text-ellipsis rounded-md px-5 pb-2 pt-1 text-titleLarge text-onPrimary backdrop-blur backdrop-brightness-75 backdrop-saturate-200"
-      >
+        class="text-ellipsis rounded-md px-5 pb-2 pt-1 text-titleLarge text-onPrimary backdrop-blur backdrop-brightness-75 backdrop-saturate-200">
         مجموعه تولیدی بازرگانی سافیت
       </h2>
     </a>

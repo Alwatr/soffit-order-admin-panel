@@ -14,28 +14,28 @@ title: نمایندگان
 </header>
 
 <main class="grow overflow-y-scroll pt-16">
-  <div class="overflow-hidden rounded-lg m-10 border-primary border-opacity-30 border-2">
+  <div class="overflow-hidden rounded-lg m-10 border-primary border-opacity-30 border-2 text-ellipsis">
     <table class="w-full whitespace-no-wrap">
       <thead class="text-bodyLarge font-bold bg-primaryContainer text-onPrimaryContainer">
-        <tr class="divide-primary divide-x-2 divide-x-reverse divide-opacity-30 text-center">
-          <td class="px-4 py-4">نام</td>
+        <tr class="divide-primary divide-x-2 divide-x-reverse divide-opacity-30 text-center select-none">
+          <td class="px-4 py-4">نام و نام خانوادگی</td>
           <td class="px-4 py-4">استان</td>
           <td class="px-4 py-4">شماره همراه</td>
           <td class="px-4 py-4">ابزار</td>
         </tr>
       </thead>
-      <tbody x-data class="divide-y-2 divide-primary divide-opacity-30 text-bodyLarge">
+      <tbody x-data class="divide-primary divide-opacity-30 text-bodyLarge divide-y-2">
         <template x-for="i in 10">
           <tr class="divide-primary divide-x-2 divide-x-reverse divide-opacity-30">
             {# <td class="px-4 py-4" x-text="$store.userProfile.data.data.fullName"></td> #}
             <td class="px-4 py-4 text-center" x-text="'آقای سید علیرضا تفتی'"></td>
             {# <td class="px-4 py-4" x-text="$store.userProfile.data.data.province"></td> #}
             <td class="px-4 py-4" x-text="'خراسان رضوی'"></td>
-            <td class="px-4 py-4" x-text="l10n.replaceNumber($store.userProfile.data.data.phoneNumber + '')"></td>
-            <td class="px-4 py-4 flex flex-row gap-2 justify-center">
-              <a class="text-primary" href="/fa/order-list.html">{% alwatrIcon "cart-outline", "text-[1.5rem]" %}</a>
-              <a class="text-primary" :href="'tel:+' + $store.userProfile.data.data.phoneNumber">{% alwatrIcon
-                "call-outline", "text-[1.5rem]" %}</a>
+            <td class="px-4 py-4" x-text="l10n.replaceNumber('0' + $store.userProfile.data.data.phoneNumber)"></td>
+            <td class="px-4 py-4 flex flex-row gap-2 justify-center text-primary items-center text-[1.5rem]">
+              <a href="/fa/order-list.html">{% alwatrIcon "cart-outline" %}</a>
+              <a :href="'tel:+' + $store.userProfile.data.data.phoneNumber">{% alwatrIcon "call-outline" %}</a>
+              <a>{% alwatrIcon "create-outline" %}</a>
             </td>
           </tr>
         </template>
