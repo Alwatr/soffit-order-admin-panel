@@ -50,6 +50,7 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "cSpell.words": [
+    "alpinejs",
     "alwatr",
     "cssnano",
     "fract",

@@ -125,7 +125,6 @@ const _userProfileStorage: UserProfileStorage = {
       this.save!();
 
       location.href = '/';
-      // FIXME: go to home when profile updated!
     }
   },
 };

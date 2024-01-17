@@ -80,7 +80,7 @@ sitemap: false
 
   <section
     x-cloak
-    x-show="$store.userProfile.signInState === 'complete' && location.hash.substring(1) === $store.userProfile.data.data.data.token"
+    x-show="$store.userProfile.signInState === 'complete' && location.hash.substring(1) === $store.userProfile.data.data.token"
     x-transition:enter.duration.100ms
     class="select-none rounded-xl border border-outlineVariant border-opacity-50 p-10 text-center shadow-sm"
   >
@@ -97,7 +97,7 @@ sitemap: false
 
   <section
     x-cloak
-    x-show="$store.userProfile.signInState === 'complete' && location.hash.substring(1) !== $store.userProfile.data.data.data.token"
+    x-show="$store.userProfile.signInState === 'complete' && location.hash.substring(1) !== $store.userProfile.data.data.token"
     x-transition:enter.duration.100ms
     class="select-none rounded-xl border border-outlineVariant border-opacity-50 p-10 text-center shadow-sm"
   >

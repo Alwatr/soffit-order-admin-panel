@@ -5,6 +5,7 @@ navId: home
 ---
 
 <header
+  x-init="$store.userProfile.require()"
   x-data
   class="absolute left-0 right-0 top-0 z-fixed flex h-16 shrink-0 grow-0 select-none items-center bg-surfaceContainer px-1 shadow translucent"
 >
@@ -14,12 +15,6 @@ navId: home
     <figure class="block p-3">
       <img src="/img/user-avatar-v1.jpg" class="block h-6 w-6 rounded-full ring-1 ring-tertiary ring-offset-2" alt="عکس پروفایل" />
     </figure>
-  </template>
-
-  <template x-if="!$store.userProfile.data">
-    <a href="/fa/require-sign-in.html" class="block cursor-pointer rounded-full p-3 text-[1.5rem] state-onSurfaceVariant">
-      {% alwatrIcon "person-circle-outline" %}
-    </a>
   </template>
 </header>
 

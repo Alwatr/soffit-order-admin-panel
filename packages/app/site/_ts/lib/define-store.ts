@@ -1,8 +1,8 @@
+import {localJsonStorage} from '@alwatr/local-storage';
 import {createLogger, type AlwatrLogger} from '@alwatr/logger';
 import alpine from 'alpinejs';
 
 import {logger} from './config';
-import {setLocalStorageItem, getLocalStorageItem} from './nanolib';
 
 import type {Dictionary} from '@alwatr/type-helper';
 
@@ -33,8 +33,9 @@ export function defineStore<T extends StoreConfig>(config: T): T {
   config.load = function (this: T, force?: true) {
     this.logger!.logMethod?.('load');
 
-    const newData = getLocalStorageItem(config.localStorageKey!, this.version, null);
-    if (newData == null) return; // data not parsed.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const newData = localJsonStorage.getItem<Dictionary<any> | null>(config.localStorageKey!, null, this.version);
+    if (newData === null) return; // data not parsed.
     if (!force && newData._rev === this.data?._rev) return; // data not modified.
 
     this.logger!.logOther?.('loaded modified data', newData);
@@ -45,7 +46,7 @@ export function defineStore<T extends StoreConfig>(config: T): T {
     this.logger!.logMethodArgs?.('save', this.data);
     if (this.data != null) {
       this.data._rev = Math.random();
-      setLocalStorageItem(this.localStorageKey!, this.version, this.data);
+      localJsonStorage.setItem(this.localStorageKey!, this.data, this.version);
     }
     else {
       localStorage.removeItem(this.localStorageKey!);

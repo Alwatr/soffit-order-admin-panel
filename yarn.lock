@@ -274,6 +274,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@alwatr/local-storage@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@alwatr/local-storage@npm:1.0.0"
+  checksum: ad4e6fa8c8f5fe5f6b51f4ceb66bfc389ca347b35b011f991274541317e2b476fb8b8d334218c7a4b3282ecfe1f7a34b3b45e410e32d18aa4a4851960211eb8c
+  languageName: node
+  linkType: hard
+
 "@alwatr/logger@npm:^2.4.1":
   version: 2.4.1
   resolution: "@alwatr/logger@npm:2.4.1"
@@ -408,6 +415,7 @@ __metadata:
     "@alwatr/icon-set-extra": "npm:^0.4.0"
     "@alwatr/icon-set-ionic": "npm:^0.4.1"
     "@alwatr/icon-set-material": "npm:^2.0.1"
+    "@alwatr/local-storage": "npm:^1.0.0"
     "@alwatr/logger": "npm:^3.2.1"
     "@alwatr/math": "npm:^1.3.1"
     "@alwatr/nano-build": "npm:^1.3.0"

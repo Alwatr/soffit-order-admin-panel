@@ -1,5 +1,5 @@
+import {localJsonStorage} from '@alwatr/local-storage';
 import {definePackage} from '@alwatr/logger';
-import {getLocalStorageItem} from '@alwatr/util';
 
 import type {} from '@alwatr/nano-build';
 import type {ServerRequestConfig} from '@alwatr/server-context';
@@ -10,10 +10,10 @@ export const logger = definePackage('@alwatr/soffit-order-app', __package_versio
  * Debug API.
  *
  * ```ts
- * localStorage.setItem('DEBUG_API', '"https://admin.order.soffit.co/"');
+ * localStorage.setItem('debugApi.v1', JSON.stringify({url: "https://order4.soffit.co/"}));
  * ```
  */
-const srvBaseUrl = getLocalStorageItem('debugApi', '/');
+const srvBaseUrl = localJsonStorage.getItem<{url: string}>('debugApi', {url: '/'}, 1).url;
 const apiBaseUrl = srvBaseUrl + 'api/v1/';
 const storeBaseUrl = apiBaseUrl + 'store/';
 
