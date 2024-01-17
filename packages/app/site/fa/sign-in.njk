@@ -1,0 +1,114 @@
+---
+title: ورود با رمز آدرس
+permalink: /s/
+sitemap: false
+---
+
+<header
+  x-data
+  x-init="if(!location.hash) location.href='/fa/require-sign-in.html'"
+  class="absolute left-0 right-0 top-0 z-fixed flex h-16 shrink-0 grow-0 select-none items-center bg-surfaceContainer px-1 translucent"
+>
+  <button
+    class="block cursor-pointer rounded-full p-3 text-[1.5rem] state-onSurface extended:invisible"
+    @click="$dispatch('request-drawer-open')"
+  >
+    {% alwatrIcon "menu-outline" %}
+  </button>
+  <div class="shrink grow text-ellipsis whitespace-nowrap px-1 text-center text-titleLarge text-onSurface">
+    {{ title }}
+  </div>
+  <a href="/" class="block cursor-pointer rounded-full p-3 text-[1.5rem] state-onSurfaceVariant">
+    {% alwatrIcon "home-outline" %}
+  </a>
+</header>
+
+<main x-data class="flex grow flex-col justify-center gap-4 overflow-y-scroll px-6 pt-16">
+  <section
+    x-show="$store.userProfile.signInState === 'loading'"
+    x-transition:enter.duration.100ms
+    class="select-none rounded-xl border border-outlineVariant border-opacity-50 p-10 text-center shadow-sm"
+  >
+    <div class="text-[3rem] text-primary">{% alwatrIcon "finger-print-outline", "inline-block" %}</div>
+    <div class="mt-6 text-titleMedium">در حال اعتبار سنجی...</div>
+  </section>
+
+  <section
+    x-cloak
+    x-show="$store.userProfile.signInState === 'initial'"
+    x-transition:enter.duration.100ms
+    class="select-none rounded-xl border border-outlineVariant border-opacity-50 p-10 text-center shadow-sm"
+  >
+    <div class="text-[3rem] text-primary">{% alwatrIcon "finger-print-outline", "inline-block" %}</div>
+    <label
+      for="user-token"
+      class="mt-6 block h-10 rounded-md border border-outlineVariant border-opacity-80 p-2 shadow-sm"
+    >
+      <input
+        type="password"
+        value="داداش ما رو چی فرض کردی؟!"
+        class="peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0"
+        readonly
+      />
+    </label>
+
+    <span
+      @click="$store.userProfile.signIn()"
+      class="mt-6 flex h-10 cursor-pointer select-none items-center justify-center rounded-xl bg-primary px-6 transition-opacity elevation-0 state-onPrimary hover:elevation-1 active:elevation-0 aria-disabled:pointer-events-none aria-disabled:opacity-40"
+    >
+      {% alwatrIcon "log-in-outline", "text-[1.125rem]" %}
+      <span class="px-2 text-labelLarge">ورود با رمز آدرس</span>
+    </span>
+  </section>
+
+  <section
+    x-cloak
+    x-show="$store.userProfile.signInState === 'failed'"
+    x-transition:enter.duration.100ms
+    class="select-none rounded-xl border border-outlineVariant border-opacity-50 p-10 text-center shadow-sm"
+  >
+    <div class="text-[3rem]">{% alwatrIcon "cloud-offline-outline", "inline-block" %}</div>
+    <div class="mt-4 text-titleMedium">خطا در اعتبارسنجی رمز آدرس!</div>
+    <button
+      @click="$store.userProfile.signIn()"
+      class="mx-auto mt-6 flex h-10 cursor-pointer select-none items-center justify-center rounded-xl bg-primary px-6 transition-opacity elevation-0 state-onPrimary hover:elevation-1 active:elevation-0 aria-disabled:pointer-events-none aria-disabled:opacity-40"
+    >
+      {% alwatrIcon "log-in-outline", "text-[1.125rem]" %}
+      <span class="px-2 text-labelLarge">تلاش مجدد</span>
+    </button>
+  </section>
+
+  <section
+    x-cloak
+    x-show="$store.userProfile.signInState === 'complete' && location.hash.substring(1) === $store.userProfile.data.data.data.token"
+    x-transition:enter.duration.100ms
+    class="select-none rounded-xl border border-outlineVariant border-opacity-50 p-10 text-center shadow-sm"
+  >
+    <div class="text-[3rem] text-primary">{% alwatrIcon "checkmark-done-outline", "inline-block" %}</div>
+    <div class="mt-4 text-titleMedium">شما قبلا وارد شده‌اید.</div>
+    <a
+      href="/"
+      class="mx-auto mt-6 flex h-10 cursor-pointer select-none items-center justify-center rounded-xl bg-primary px-6 transition-opacity elevation-0 state-onPrimary hover:elevation-1 active:elevation-0 aria-disabled:pointer-events-none aria-disabled:opacity-40"
+    >
+      {% alwatrIcon "home-outline", "text-[1.125rem]" %}
+      <span class="px-2 text-labelLarge">بازگشت به صفحه اصلی</span>
+    </a>
+  </section>
+
+  <section
+    x-cloak
+    x-show="$store.userProfile.signInState === 'complete' && location.hash.substring(1) !== $store.userProfile.data.data.data.token"
+    x-transition:enter.duration.100ms
+    class="select-none rounded-xl border border-outlineVariant border-opacity-50 p-10 text-center shadow-sm"
+  >
+    <div class="text-[3rem] text-primary">{% alwatrIcon "swap-horizontal-outline", "inline-block" %}</div>
+    <div class="mt-4 text-titleMedium">شما قبلا با حساب دیگری وارد شده‌اید!</div>
+    <button
+      @click="$store.userProfile.signOut('none')"
+      class="mx-auto mt-6 flex h-10 cursor-pointer select-none items-center justify-center rounded-xl bg-primary px-6 transition-opacity elevation-0 state-onPrimary hover:elevation-1 active:elevation-0 aria-disabled:pointer-events-none aria-disabled:opacity-40"
+    >
+      {% alwatrIcon "log-out-outline", "text-[1.125rem]" %}
+      <span class="px-2 text-labelLarge">خروج از حساب فعلی</span>
+    </button>
+  </section>
+</main>

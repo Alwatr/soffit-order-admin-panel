@@ -1,4 +1,3 @@
-import {platformInfo} from '@alwatr/platform-info'
 import {untilNextFrame} from '@alwatr/util';
 
 import {logger} from './config';
@@ -25,4 +24,4 @@ async function keepScroll() {
   });
 }
 
-if (platformInfo.development === true) keepScroll();
+if (logger.debugMode) keepScroll();
