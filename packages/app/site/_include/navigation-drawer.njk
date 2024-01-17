@@ -1,16 +1,10 @@
 <aside
-  x-data="{ open: false }"
+  x-data="{open: true}"
   @request-drawer-open.window="open=true;"
   @request-drawer-close.window="open=false;"
   :class="{opened: open}"
   class="fixed bottom-0 left-0 top-0 z-modal w-80 shrink-0 translate-x-full transform-gpu select-none overflow-clip rounded-e-2xl bg-surfaceContainerLow transition-transform duration-300 ease-in will-change-transform elevation-1 rtl:left-auto rtl:right-0 extended:static extended:translate-x-0 extended:rounded-none extended:will-change-auto [&.opened]:translate-x-0 [&.opened]:ease-out"
 >
-  <button
-    class="absolute right-1 top-2 block cursor-pointer rounded-full p-3 text-[1.5rem] state-onSurface extended:invisible"
-    @click="$dispatch('request-drawer-close')"
-  >
-    {% alwatrIcon "close-outline" %}
-  </button>
   <nav class="flex h-full flex-col overflow-y-auto bg-surfaceContainerLow px-3 py-2 text-onSurfaceVariant elevation-1">
     <template x-if="$store.userProfile.data">
       <section x-data class="mt-4 text-center">
