@@ -4,7 +4,7 @@ const {readFile} = require('fs/promises');
 
 async function alwatrIcon(icon, customClass = '') {
   if (icon.indexOf('/') === -1) {
-    icon = 'material/' + icon;
+    icon = 'ionic/' + icon;
   }
 
   if (icon.indexOf(':') === -1) {

@@ -51,6 +51,7 @@
     "@alwatr/font": "^1.2.0",
     "@alwatr/i18n": "^2.0.3",
     "@alwatr/icon-set-extra": "^0.4.0",
+    "@alwatr/icon-set-ionic": "^0.4.1",
     "@alwatr/icon-set-material": "^2.0.1",
     "@alwatr/logger": "^3.2.2",
     "@alwatr/nano-build": "^1.3.1",

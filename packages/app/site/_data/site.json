@@ -1,7 +1,7 @@
 {
-  "title": "مجموعه‌ی الوتر",
-  "description": "یک تیم نرم‌افزاری.",
-  "author": {"name": "Alwatr", "email": "info@alwatr.ir", "url": "https://github.com/alwatr"},
+  "title": "پنل ادمین سفارشگیر مجموعه‌ی سافیت",
+  "description": "پنل ادمین سفارشگیر مجموعه‌ی سافیت.",
+  "author": {"name": "Soffit", "email": "info@soffit.co", "url": "https://www.soffit.co"},
   "defaultSocialImage": "/img/meta/social.jpeg",
   "defaultLocale": "fa-IR",
   "orientation": "portrait",

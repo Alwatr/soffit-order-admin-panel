@@ -223,6 +223,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@alwatr/icon-set-ionic@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "@alwatr/icon-set-ionic@npm:0.4.1"
+  checksum: 9e854a79b148ad94b0d4dd7ce373f60064811f181cd48c8d9d373a5cf921acc994c1adcb2adad9fab65bbfbd9a61a193f0fbd9879da01f75c8fb131940da7013
+  languageName: node
+  linkType: hard
+
 "@alwatr/icon-set-material@npm:^2.0.1":
   version: 2.0.1
   resolution: "@alwatr/icon-set-material@npm:2.0.1"
@@ -285,87 +292,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@alwatr/pmpa-api@workspace:packages/api":
-  version: 0.0.0-use.local
-  resolution: "@alwatr/pmpa-api@workspace:packages/api"
-  dependencies:
-    "@alwatr/crypto": "npm:^3.0.4"
-    "@alwatr/logger": "npm:^3.2.2"
-    "@alwatr/nano-build": "npm:^1.3.1"
-    "@alwatr/nano-server": "npm:^1.2.7"
-    "@alwatr/prettier-config": "npm:^1.0.4"
-    "@alwatr/storage-sdk": "npm:^4.1.0"
-    "@alwatr/tsconfig-base": "npm:^1.1.1"
-    "@alwatr/type": "npm:^1.2.4"
-    "@alwatr/util": "npm:^1.4.1"
-    "@types/node": "npm:^20.11.4"
-    esbuild: "npm:^0.19.11"
-    npm-run-all: "npm:^4.1.5"
-    typescript: "npm:^5.3.3"
-  languageName: unknown
-  linkType: soft
-
-"@alwatr/pmpa-app@workspace:packages/app":
-  version: 0.0.0-use.local
-  resolution: "@alwatr/pmpa-app@workspace:packages/app"
-  dependencies:
-    "@11ty/eleventy": "npm:^2.0.1"
-    "@11ty/eleventy-plugin-directory-output": "npm:^1.0.1"
-    "@11ty/eleventy-plugin-rss": "npm:^1.2.0"
-    "@alwatr/fetch": "npm:^2.2.1"
-    "@alwatr/font": "npm:^1.2.0"
-    "@alwatr/i18n": "npm:^2.0.3"
-    "@alwatr/icon-set-extra": "npm:^0.4.0"
-    "@alwatr/icon-set-material": "npm:^2.0.1"
-    "@alwatr/logger": "npm:^3.2.2"
-    "@alwatr/nano-build": "npm:^1.3.1"
-    "@alwatr/platform-info": "npm:^1.1.2"
-    "@alwatr/prettier-config": "npm:^1.0.4"
-    "@alwatr/server-context": "npm:^1.2.6"
-    "@alwatr/style": "npm:^2.0.3"
-    "@alwatr/tsconfig-base": "npm:^1.1.1"
-    "@alwatr/util": "npm:^1.4.1"
-    "@swc/html": "npm:^0.0.28"
-    "@types/alpinejs": "npm:^3.13.6"
-    "@web/dev-server": "npm:^0.4.1"
-    alpinejs: "npm:^3.13.3"
-    cssnano: "npm:^6.0.3"
-    esbuild: "npm:^0.19.11"
-    npm-run-all: "npm:^4.1.5"
-    postcss: "npm:^8.4.33"
-    postcss-import: "npm:^16.0.0"
-    postcss-preset-env: "npm:^9.3.0"
-    postcss-variable-compress: "npm:^3.0.0"
-    tailwindcss: "npm:^3.4.1"
-    typescript: "npm:^5.3.3"
-  languageName: unknown
-  linkType: soft
-
-"@alwatr/pmpa-monorepo@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@alwatr/pmpa-monorepo@workspace:."
-  dependencies:
-    "@alwatr/eslint-config": "npm:^1.0.9"
-    "@alwatr/prettier-config": "npm:^1.0.4"
-    "@alwatr/tsconfig-base": "npm:^1.1.1"
-    "@lerna-lite/changed": "npm:^3.2.1"
-    "@lerna-lite/cli": "npm:^3.2.1"
-    "@lerna-lite/diff": "npm:^3.2.1"
-    "@lerna-lite/exec": "npm:^3.2.1"
-    "@lerna-lite/publish": "npm:^3.2.1"
-    "@lerna-lite/run": "npm:^3.2.1"
-    "@lerna-lite/version": "npm:^3.2.1"
-    "@typescript-eslint/eslint-plugin": "npm:^6.19.0"
-    "@typescript-eslint/parser": "npm:^6.19.0"
-    conventional-changelog-conventionalcommits: "npm:^7.0.2"
-    eslint: "npm:^8.56.0"
-    eslint-import-resolver-typescript: "npm:^3.6.1"
-    eslint-plugin-import: "npm:^2.29.1"
-    prettier: "npm:^3.2.2"
-    typescript: "npm:^5.3.3"
-  languageName: unknown
-  linkType: soft
-
 "@alwatr/prettier-config@npm:^1.0.4":
   version: 1.0.4
   resolution: "@alwatr/prettier-config@npm:1.0.4"
@@ -399,6 +325,88 @@ __metadata:
   checksum: 30f24db5740f8a23889444e1416c78efaea4b6177b00c642e82650aecd516e08094df090c2a7d81b7d5d0a270d219520e67aba810b2349ec79b5ab04768bd7d0
   languageName: node
   linkType: hard
+
+"@alwatr/soffit-order-admin-api@workspace:packages/api":
+  version: 0.0.0-use.local
+  resolution: "@alwatr/soffit-order-admin-api@workspace:packages/api"
+  dependencies:
+    "@alwatr/crypto": "npm:^3.0.4"
+    "@alwatr/logger": "npm:^3.2.2"
+    "@alwatr/nano-build": "npm:^1.3.1"
+    "@alwatr/nano-server": "npm:^1.2.7"
+    "@alwatr/prettier-config": "npm:^1.0.4"
+    "@alwatr/storage-sdk": "npm:^4.1.0"
+    "@alwatr/tsconfig-base": "npm:^1.1.1"
+    "@alwatr/type": "npm:^1.2.4"
+    "@alwatr/util": "npm:^1.4.1"
+    "@types/node": "npm:^20.11.4"
+    esbuild: "npm:^0.19.11"
+    npm-run-all: "npm:^4.1.5"
+    typescript: "npm:^5.3.3"
+  languageName: unknown
+  linkType: soft
+
+"@alwatr/soffit-order-admin-app@workspace:packages/app":
+  version: 0.0.0-use.local
+  resolution: "@alwatr/soffit-order-admin-app@workspace:packages/app"
+  dependencies:
+    "@11ty/eleventy": "npm:^2.0.1"
+    "@11ty/eleventy-plugin-directory-output": "npm:^1.0.1"
+    "@11ty/eleventy-plugin-rss": "npm:^1.2.0"
+    "@alwatr/fetch": "npm:^2.2.1"
+    "@alwatr/font": "npm:^1.2.0"
+    "@alwatr/i18n": "npm:^2.0.3"
+    "@alwatr/icon-set-extra": "npm:^0.4.0"
+    "@alwatr/icon-set-ionic": "npm:^0.4.1"
+    "@alwatr/icon-set-material": "npm:^2.0.1"
+    "@alwatr/logger": "npm:^3.2.2"
+    "@alwatr/nano-build": "npm:^1.3.1"
+    "@alwatr/platform-info": "npm:^1.1.2"
+    "@alwatr/prettier-config": "npm:^1.0.4"
+    "@alwatr/server-context": "npm:^1.2.6"
+    "@alwatr/style": "npm:^2.0.3"
+    "@alwatr/tsconfig-base": "npm:^1.1.1"
+    "@alwatr/util": "npm:^1.4.1"
+    "@swc/html": "npm:^0.0.28"
+    "@types/alpinejs": "npm:^3.13.6"
+    "@web/dev-server": "npm:^0.4.1"
+    alpinejs: "npm:^3.13.3"
+    cssnano: "npm:^6.0.3"
+    esbuild: "npm:^0.19.11"
+    npm-run-all: "npm:^4.1.5"
+    postcss: "npm:^8.4.33"
+    postcss-import: "npm:^16.0.0"
+    postcss-preset-env: "npm:^9.3.0"
+    postcss-variable-compress: "npm:^3.0.0"
+    tailwindcss: "npm:^3.4.1"
+    typescript: "npm:^5.3.3"
+  languageName: unknown
+  linkType: soft
+
+"@alwatr/soffit-order-admin-monorepo@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@alwatr/soffit-order-admin-monorepo@workspace:."
+  dependencies:
+    "@alwatr/eslint-config": "npm:^1.0.9"
+    "@alwatr/prettier-config": "npm:^1.0.4"
+    "@alwatr/tsconfig-base": "npm:^1.1.1"
+    "@lerna-lite/changed": "npm:^3.2.1"
+    "@lerna-lite/cli": "npm:^3.2.1"
+    "@lerna-lite/diff": "npm:^3.2.1"
+    "@lerna-lite/exec": "npm:^3.2.1"
+    "@lerna-lite/publish": "npm:^3.2.1"
+    "@lerna-lite/run": "npm:^3.2.1"
+    "@lerna-lite/version": "npm:^3.2.1"
+    "@typescript-eslint/eslint-plugin": "npm:^6.19.0"
+    "@typescript-eslint/parser": "npm:^6.19.0"
+    conventional-changelog-conventionalcommits: "npm:^7.0.2"
+    eslint: "npm:^8.56.0"
+    eslint-import-resolver-typescript: "npm:^3.6.1"
+    eslint-plugin-import: "npm:^2.29.1"
+    prettier: "npm:^3.2.2"
+    typescript: "npm:^5.3.3"
+  languageName: unknown
+  linkType: soft
 
 "@alwatr/storage-sdk@npm:^4.1.0":
   version: 4.1.0

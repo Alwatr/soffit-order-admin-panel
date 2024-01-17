@@ -1,0 +1,82 @@
+<aside
+  x-data="{ open: false }"
+  @request-drawer-open.window="open=true;"
+  @request-drawer-close.window="open=false;"
+  :class="{opened: open}"
+  class="fixed bottom-0 left-0 top-0 z-modal w-80 shrink-0 translate-x-full transform-gpu select-none overflow-clip rounded-e-2xl bg-surfaceContainerLow transition-transform duration-300 ease-in will-change-transform elevation-1 rtl:left-auto rtl:right-0 extended:static extended:translate-x-0 extended:rounded-none extended:will-change-auto [&.opened]:translate-x-0 [&.opened]:ease-out"
+>
+  <button
+    class="absolute right-1 top-2 block cursor-pointer rounded-full p-3 text-[1.5rem] state-onSurface extended:invisible"
+    @click="$dispatch('request-drawer-close')"
+  >
+    {% alwatrIcon "close-outline" %}
+  </button>
+  <nav class="flex h-full flex-col overflow-y-auto bg-surfaceContainerLow px-3 py-2 text-onSurfaceVariant elevation-1">
+    <template x-if="$store.userProfile.data">
+      <section x-data class="mt-4 text-center">
+        <img src="/img/user-avatar-v1.jpg" class="mx-auto block h-20 w-20 rounded-full ring-2 ring-tertiary ring-offset-2" alt="عکس پروفایل" />
+        <h3 x-text="'جناب آقای ' + $store.userProfile.data.data.fullName" class="mt-4 text-ellipsis text-titleMedium"></h3>
+        <p x-show="$store.userProfile.data.data.province != null" class="text-ellipsis pt-1 text-bodyMedium" x-text="'نمایندگی استان محترم' + $store.userProfile.data.data.province"></p>
+        <button
+          @click="$store.userProfile.signOut('redirect')"
+          class="mt-5 flex h-10 w-full cursor-pointer select-none items-center justify-center rounded-xl border border-outline border-opacity-50 px-4 state-onSurfaceVariant hover:text-primary"
+        >
+          {% alwatrIcon "log-out-outline", "text-[1.125rem]" %}
+          <span class="px-2 text-labelLarge">خروج از حساب</span>
+        </button>
+      </section>
+    </template>
+
+    <template x-if="!$store.userProfile.data">
+      <section x-data class="mt-8 text-center">
+        <a
+          href="/fa/require-sign-in.html"
+          class="mt-5 flex h-10 w-full cursor-pointer select-none items-center justify-center rounded-xl border border-outline border-opacity-50 px-4 state-onSurfaceVariant hover:text-primary"
+        >
+          {% alwatrIcon "log-in-outline", "text-[1.125rem]" %}
+          <span class="px-2 text-labelLarge">ورود به حساب کاربری</span>
+        </a>
+      </section>
+    </template>
+
+    <section
+      class="mt-5 grow cursor-pointer select-none border-t border-outline border-opacity-50 pt-5 text-labelLarge"
+    >
+      <a
+        href="/"
+        class="flex h-14 flex-nowrap items-center gap-3 rounded-full px-3 state-onSecondaryContainer hover:bg-secondaryContainer"
+      >
+        {% alwatrIcon "home-outline", "text-[1.5rem]" %}
+        <div class="grow">صفحه اصلی</div>
+      </a>
+
+      <a
+        href="/fa/admin/order-list.html"
+        class="flex h-14 flex-nowrap items-center gap-3 rounded-full px-3 state-onSecondaryContainer hover:bg-secondaryContainer"
+      >
+        {% alwatrIcon "medal-outline", "text-[1.5rem]" %}
+        <div class="grow">لیست سفارش‌های نمایندگی‌ها</div>
+      </a>
+
+      <a
+        href="/fa/support.html"
+        class="flex h-14 flex-nowrap items-center gap-3 rounded-full px-3 state-onSecondaryContainer hover:bg-secondaryContainer"
+      >
+        {% alwatrIcon "chatbox-ellipses-outline", "text-[1.5rem]" %}
+        <div class="grow">چت</div>
+      </a>
+    </section>
+    <div class="m-2 text-center text-labelSmall opacity-50" x-data @dblClick="devMode()">
+      Soffit Order Admin v{{ pkg.version }}+{{ git.shortSha }}
+    </div>
+  </nav>
+</aside>
+
+<div
+  x-data="{ open: false }"
+  @request-drawer-open.window="open=true;"
+  @request-drawer-close.window="open=false;"
+  :class="{opened: open}"
+  @click="$dispatch('request-drawer-close')"
+  class="pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-scrim bg-scrim opacity-0 transition-opacity will-change-[opacity] extended:hidden [&.opened]:pointer-events-auto [&.opened]:opacity-50"
+></div>
